@@ -1,0 +1,25 @@
+#search-results {
+  article {
+    margin-bottom: 3rem;
+    border-bottom: 1px dotted;
+
+    h2 a {
+      color: var(--color-primary);
+    }
+
+    a {
+      font-weight: bold;
+      color: var(--color-link);
+    }
+
+    .meta {
+      font-style: italic;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    mark {
+      background-color: var(--color-highlight);
+    }
+  }
+}

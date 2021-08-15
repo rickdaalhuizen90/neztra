@@ -1,0 +1,8 @@
+<section class="category-filter">
+  <h2 class="small-title">{{ T "categories" }}</h2>
+  <div class="category-tags">
+     {{- range $name, $items := .Site.Taxonomies.categories }} 
+      <a class="category-tag" href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name | humanize }}">{{ $name | humanize }}</a>
+    {{ end }}
+  </div>
+</section>

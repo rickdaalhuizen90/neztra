@@ -1,0 +1,14 @@
+
+<section class="category-list">
+  <h2 class="small-title">{{ i18n "categories" }}</h2>
+  <ul>
+    {{range $name, $tax := $.Site.Taxonomies.categories }}
+      <li>
+        <a href="{{ $tax.Page.Permalink }}">
+          <span>{{ $name | humanize }}</span>
+          <span class="count">{{ len $tax.Pages }}</span>
+        </a>
+      </li>
+    {{end}}
+  </ul>
+</section>

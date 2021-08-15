@@ -1,0 +1,42 @@
+.post-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  picture {
+    flex: 1;
+    
+    img {
+       height: auto;
+       border-radius: var(--img-border-radius);
+    }
+  }
+
+  .post-content {
+    flex: 1;
+    flex-basis: 30%;
+    padding: 0 1vw;
+
+    h3 {
+      font-weight: bold;
+      text-transform: inherit;
+    }
+
+    [role="button"] {
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .post-item {
+    flex-direction: row;
+  }
+}

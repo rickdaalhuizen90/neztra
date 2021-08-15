@@ -1,0 +1,55 @@
+<!-- Jquery -->
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"
+></script>
+
+<!-- Infinite Scroll -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/infinite.min.js" integrity="sha512-m3kH21aSkKrGeoqdb7IP7rlu1VcQee5VrjLQepeSOp5M05Wl6HwqJ1Jwo14EHOuBg77pkAlBtQuVMPVeXzfueg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Fuzzy Search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+
+{{ $search := resources.Get "js/search.js" | js.Build "search.js" | minify | fingerprint }}
+<script async defer src="{{ $search.RelPermalink }}"></script>
+
+{{ $main := resources.Get "js/main.js" | js.Build "main.js" | minify | fingerprint }}
+<script async defer src="{{ $main.RelPermalink }}"></script>
+
+<!-- Production `-->
+{{ if eq (getenv "HUGO_ENV") "production" }}
+<!-- Google Ads -->
+<script data-ad-client="ca-pub-9817343977140587" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // Init Google Ads
+  (adsbygoogle = window.adsbygoogle || []).push({});
+
+  // Prevent Inspect Tools
+  document.addEventListener("contextmenu", e => e.preventDefault(), false);
+</script>
+{{ end }}
+
+<!-- Service Workers -->
+{{ if eq .Site.Params.pwa true }}
+<script>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.min.js', { scope: '/' })
+      .then(registration => console.log('Service Worker Registered'));
+
+    navigator.serviceWorker
+      .ready
+      .then(registration => console.log('Service Worker Ready'));
+  }
+
+  window.addEventListener('beforeinstallprompt', e => {
+    e.userChoice.then(choiceResult => {
+      ga('send', 'event', 'A2H', choiceResult.outcome);
+    });
+  });
+</script>
+{{ end }}

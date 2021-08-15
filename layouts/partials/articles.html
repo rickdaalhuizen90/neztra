@@ -1,0 +1,24 @@
+<section id="articles">
+  <h2 class="small-title">{{ T "article" }}</h2>
+  <p>
+    {{ T "articleIntro" }}
+  </p>
+  <div class="articles">
+    <!-- Hero Section (Featured Recipes) -->
+    {{ range first 6 (where .Site.RegularPages "Section" ( T "article" ) ) }}
+      <article role="article">
+        <a href="{{ .Permalink }}">
+          {{ $title := .Title }}
+          {{ if .Params.Feature }}
+            {{ with .Resources.GetMatch (.Params.Feature) }}
+                {{ $png := .Fill "600x720" }}
+                {{ $webp := .Fill "600x720 webp picture" }}
+                {{ partialCached "picture.html" (dict "context" . "webp" $webp.Permalink "png" $png.Permalink  "title" $title "width" $png.Width "height" $png.Height "class" "br2" ) . }}
+            {{ end }}
+          {{ end }}
+          <h3>{{ $title }}</h3>
+        </a>
+      </article>
+    {{ end }}
+  </div>
+</section>

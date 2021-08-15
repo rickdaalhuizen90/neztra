@@ -1,0 +1,29 @@
+<a href="{{ .Permalink }}" class="infinite-item">
+  <article class="post-item" role="article">
+      {{ $title := .Title }}
+      {{ if .Params.Feature }}
+        {{ with .Resources.GetMatch (.Params.Feature) }}
+            {{ $png := .Fill "600x720" }}
+            {{ $webp := .Fill "600x720 webp picture" }}
+            {{ partial "picture.html" (dict "context" . "webp" $webp.Permalink "png" $png.Permalink  "title" $title "width" $png.Width "height" $png.Height "class" "" ) . }}
+        {{ end }}
+      {{ end }}
+      <div class="post-content">
+        <h3>{{ $title }}</h3>
+        <i class="post-meta">
+          {{ T "published" }}:
+          <time datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` | safeHTML }}">
+            {{ .PublishDate | time.Format ":date_long" }}
+          </time>
+        </i>
+        <p>
+            {{ .Summary }}...
+        </p>
+        {{ if .Truncated }}
+        <p role="button">
+          {{ T "readMore" }} →
+        </p>
+        {{ end }}
+      </div>
+  </article>
+</a>

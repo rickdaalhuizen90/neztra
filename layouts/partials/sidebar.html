@@ -1,0 +1,15 @@
+<aside id="sidebar">
+
+  {{ if .IsHome }}
+    <!-- Author Card -->
+    {{- partialCached "author.html" . -}}
+
+    <!-- Tabs -->
+    {{- partial "post-trending.html" . -}}
+
+    <!-- Categories -->
+    {{- partialCached "category-list.html" . -}}
+  {{ else }}
+    <!-- @todo -->
+  {{ end }}
+</aside>

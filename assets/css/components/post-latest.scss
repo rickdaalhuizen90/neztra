@@ -1,0 +1,22 @@
+#post-latest {
+  border-bottom: 4px double var(--color-black);
+
+  .see-more {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 40px 0;
+    text-decoration: underline;
+    font-weight: 500;
+    border-top: 4px double var(--color-black);
+
+    &:after {
+      content: '→';
+      font-family: icons;
+    }
+
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+}

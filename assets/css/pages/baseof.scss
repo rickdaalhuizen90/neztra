@@ -1,0 +1,45 @@
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 2.5em 5vw;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "hero"
+    "content"
+    "sidebar"
+    "footer";
+
+  header {
+    grid-area: header;
+    border: 1px solid purple;
+  }
+
+  #hero {
+    grid-area: hero;
+  }
+
+  main {
+    grid-area: content;
+  }
+
+  #sidebar {
+    grid-area: sidebar;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 30%;
+    gap: 1.5em;
+    grid-template-areas:
+      "header header"
+      "hero hero"
+      "content sidebar"
+      "footer footer";
+  }
+}

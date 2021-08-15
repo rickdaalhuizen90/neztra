@@ -1,0 +1,24 @@
+.steps {
+  ul {
+    counter-reset: li;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    > li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+      list-style-type: none;
+      margin: 0 0 1.5rem;
+
+      &:before {
+        counter-increment: li;
+        content: counter(li) ". ";
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

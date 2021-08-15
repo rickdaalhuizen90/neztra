@@ -1,0 +1,16 @@
+{{ define "main" }}
+	{{$home := (and .IsHome (eq .Paginator.PageNumber 1))}}
+
+  <!-- Latest Post -->
+  {{- partial "post-latest.html" . -}}
+
+  {{ if $home }}
+
+  <!-- Top Collections -->
+  {{- partialCached "collections.html" . -}}
+
+  <!-- Articles -->
+  {{- partial "articles.html" . -}}
+
+  {{ end }}
+{{ end }}

@@ -1,0 +1,10 @@
+<section class="post-trending">
+  <h2 class="small-title">{{ T "trending" }}</h2>
+  <ol>
+    {{ range first 5 (where .Site.Pages.ByPublishDate ".Params.trending" "eq" true) }}
+      <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ol>
+</section>

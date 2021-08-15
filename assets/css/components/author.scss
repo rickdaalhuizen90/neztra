@@ -1,0 +1,24 @@
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3vw;
+
+  img {
+    width: auto;
+    border-radius: 100%;
+    vertical-align: top;
+  }
+
+  .follow-me {
+    display: flex;
+    gap: 1rem;
+
+    svg {
+      margin-top: 1rem;
+      width: 35px;
+    }
+  }
+}

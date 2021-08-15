@@ -1,0 +1,16 @@
+#articles {
+
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    article {
+      width: calc(1/3 * 100% - 16px);
+
+      img {
+        height: auto;
+      }
+    }
+  }
+}

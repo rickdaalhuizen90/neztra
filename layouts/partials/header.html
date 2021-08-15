@@ -1,0 +1,33 @@
+<header id="menu" role="banner" class="toggle">
+  {{/*  <p class="mt2 mb0 f6 fw6 ttu tracked ">{{ .Site.Params.Subtitle }}</p>  */}}
+  
+  <div class="wrapper">
+    <div class="brand">
+      <a href="{{ $.Site.BaseURL }}">
+        <img role="img" class="logo" width="512" height="512" alt="{{ $.Site.Title }}" src="/android-chrome-512x512.png" >
+      </a>
+    </div>
+  
+    <div class="button">
+      <svg class="search" viewBox="0 0 20 20" version="1.1" aria-hidden="true"><title>search</title><path d="M3.4 11.56a5.77 5.77 0 1 1 8.16 0 5.78 5.78 0 0 1-8.16 0zM20 18.82l-6.68-6.68a7.48 7.48 0 1 0-1.18 1.18L18.82 20 20 18.82z"></path></svg>
+      <svg class="burger" viewBox="0 0 20 20" version="1.1" aria-hidden="true"><title>burger-menu</title><path class="icon-main-color" d="M0 2.5h20v1.67H0zm0 6.67h20v1.66H0zm0 6.66h20v1.67H0z"></path></svg>
+      <svg class="close" viewBox="0 0 20 20" version="1.1" aria-hidden="true"><title>close</title><polygon class="icon-main-color" points="8.66 10.1 0 1.44 1.24 0.2 9.9 8.86 18.56 0.2 19.8 1.44 11.14 10.1 19.8 18.76 18.56 20 9.9 11.34 1.24 20 0 18.76 8.66 10.1"></polygon></svg>
+    </div>
+  
+    <form class="search-form" action={{ "search" | absURL }} role="search">
+      <fieldset>
+        <input placeholder={{ T "searchHere" }} type="text" id="search-query" name="s">
+        <input type="submit" role="button" value={{ T "search" }}>
+      </fieldset>
+    </form>
+  
+    <nav>
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">
+          {{ $text := print .Name | safeHTML }}
+          {{ $text }}
+        </a>
+        {{ end }}
+    </nav>
+  </div>
+</header>

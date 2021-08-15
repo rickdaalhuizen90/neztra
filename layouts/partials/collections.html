@@ -1,0 +1,33 @@
+<section id="collections">
+  <h2 class="small-title">{{ T "collections" }}</h2>
+  <p>
+    {{ T "collectionsIntro" }}
+  </p>
+
+  <div class="articles">
+    {{ range $index, $collection := $.Site.Params.collections }}
+      {{ range $.Site.RegularPages.ByDate }}
+        {{  if and (in .Params.categories $collection) (eq .Params.collection true) }}
+          {{ $url := printf "categories/%s" $collection }}
+          <article role="article">
+            <a href="{{ $url | urlize }}">
+              {{ $title := .Title }}
+              {{ if .Params.Feature }}
+                {{ with .Resources.GetMatch (.Params.Feature) }}
+                    {{ $png := .Fill "600x460" }}
+                    {{ $webp := .Fill "600x460 webp picture" }}
+                    {{ partialCached "picture.html" (dict "context" . "webp" $webp.Permalink "png" $png.Permalink  "title" $title "width" $png.Width "height" $png.Height "class" "br2" ) . }}
+                {{ end }}
+              {{ end }}
+              <div class="content">
+                <i>Collection</i>
+                <h3>{{ $collection }}</h3>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+

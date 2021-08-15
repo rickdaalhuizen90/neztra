@@ -1,0 +1,37 @@
+/**
+The application.scss file should only hold imports.
+No actual rules, styling, variables, mixins, etc. can go in it.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import 'config';
+@import 'abstract/functions';
+@import 'abstract/mixins';
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/typography';
+@import 'core';
+
+/* Pages */
+@import 'pages/baseof';
+@import 'pages/404';
+@import 'pages/search';
+@import 'pages/single';
+
+/* Components */
+@import 'components/header';
+@import 'components/hero';
+@import 'components/post-latest';
+@import 'components/post';
+@import 'components/pagination';
+@import 'components/collections';
+@import 'components/articles';
+@import 'components/sidebar';
+@import 'components/author';
+@import 'components/post-trending';
+@import 'components/post-related';
+@import 'components/category-list';
+@import 'components/post-info';
+@import 'components/steps';
+@import 'components/footer';

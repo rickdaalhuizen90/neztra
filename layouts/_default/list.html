@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <main class="infinite-container">
+      <h2 class="small-title">{{ .Title | humanize }}</h2>
+      {{ $paginator := .Paginate (where .RegularPages "Draft" false) }}
+      {{ range $paginator.Pages }}
+           {{- partial "post.html" . -}}
+      {{ end }}
+
+      {{ partial "pagination.html" . }}
+    </main>
+{{ end }}

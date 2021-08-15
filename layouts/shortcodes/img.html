@@ -1,0 +1,44 @@
+<!-- Get src param from shortcode -->
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+
+<!-- Get alt param from shortcode -->
+{{ $alt := .Get "alt"}}
+
+<!-- PNG -->
+{{ $smallw := default "458x" }}
+{{ $mediumw := default "726x" }}
+{{ $largew := default "1200x" }}
+
+<!-- resize the src image to the given sizes -->
+{{ .Scratch.Set "small" ($src.Resize $smallw) }}
+{{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
+{{ .Scratch.Set "large" ($src.Resize $largew) }}
+
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+
+<!-- Webp -->
+{{ $webpSmallw := default "458x webp" }}
+{{ $webpMediumw := default "726x webp" }}
+{{ $webpLargew := default "1200x webp" }}
+
+<!-- resize the src image to the given sizes -->
+{{ .Scratch.Set "small" ($src.Resize $webpSmallw) }}
+{{ .Scratch.Set "medium" ($src.Resize $webpMediumw) }}
+{{ .Scratch.Set "large" ($src.Resize $webpLargew) }}
+
+{{ $webpSmall := .Scratch.Get "small" }}
+{{ $webpMedium := .Scratch.Get "medium" }}
+{{ $webpLarge := .Scratch.Get "large" }}
+
+<picture role="img">
+  <source srcset="
+    {{ $webpSmall.RelPermalink }} 458w,
+    {{ $webpMedium.RelPermalink }} 726w,
+    {{ $webpLarge.RelPermalink }} 1200w" type="image/webp" sizes="50vw" src="{{ $webpSmall.RelPermalink }}">
+  <img alt="{{ $alt }}" srcset="
+    {{ $small.RelPermalink }} 458w,
+    {{ $medium.RelPermalink }} 726w,
+    {{ $large.RelPermalink }} 1200w" sizes="50vw" loading="lazy" src="{{ $small.RelPermalink }}" />
+</picture>

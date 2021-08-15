@@ -1,0 +1,22 @@
+<section id="post-latest">
+  {{ $paginator := .Paginate (where .Site.RegularPages.ByPublishDate "Draft" false) }}
+  {{ $home := (and .IsHome (eq .Paginator.PageNumber 1)) }}
+
+  {{ if  $home }}
+  <h2 class="small-title">{{ T "latest" }}</h2>
+  {{ else }}
+  <h2 class="small-title">{{ T "page" }} {{ .Paginator.PageNumber }}</h2>
+  {{ end }}
+  
+  <div class="post-items infinite-container infinite-loading">
+  {{ range $paginator.Pages }}
+      {{- partial "post.html" . -}}
+  {{ end }}
+  </div>
+
+  {{ with .Site.GetPage "Section" ( T "recipe" ) }}
+    <a class="see-more" href="{{ .Permalink }}">{{ T "seeAll"}}</a>
+  {{ else }}
+    {{- partial "pagination.html" . -}}
+  {{ end }}
+</section>

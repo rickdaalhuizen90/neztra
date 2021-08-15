@@ -1,0 +1,35 @@
+.category-list {
+  ul {
+    overflow-x: hidden;
+    line-height: 2.15em;
+
+    a {
+      overflow: hidden;
+      text-transform: capitalize;
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+      font-weight: 500;
+  
+      .count {
+        padding-left: 0.33em;
+        background: var(--color-bg);
+      }
+  
+      span+span {
+        float: right;
+      }
+
+      span:first-child {
+        padding-right: 0.33em;
+        background: var(--color-bg);
+      }
+  
+      &:before {
+        float: left;
+        width: 0;
+        white-space: nowrap;
+        content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ';
+      }
+    }
+  }
+}

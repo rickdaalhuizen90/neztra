@@ -1,0 +1,41 @@
+.post-trending {
+  ol {
+    list-style: none;
+    counter-reset: counting;
+    margin-bottom: 40px;
+
+    li {
+      counter-increment: counting;
+      display: flex;
+      align-items: center;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px dotted var(--color-primary);
+      align-items: normal;
+      padding: 15px 0;
+      font-weight: bolder;
+
+      &:before {
+        content: counter(counting);
+        flex-shrink: 0;
+        font-size: 22px;
+        line-height: 40px;
+        text-align: center;
+        height: 42px;
+        width: 42px;
+        border-radius: 100%;
+        margin: 0 15px 0 0;
+        background: var(--color-secondary);
+        color: var(--color-primary);
+      }
+
+      &:hover {
+        opacity: 0.85;
+      }
+
+      a:hover {
+        color: var(--color-link);
+      }
+    }
+  }
+}

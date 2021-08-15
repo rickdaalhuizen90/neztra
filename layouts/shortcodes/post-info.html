@@ -1,0 +1,22 @@
+<div class="post-info">
+  <dl>
+    <dt>{{ T "prepTime" }}</dt>
+    <dd ><meta itemprop="prepTime" content="PT15M">{{ .Get "prep" }}</dd>
+  </dl>
+  <dl>
+    <dt>{{ T "cookTime" }}</dt>
+    <dd><meta itemprop="cookTime" content="PT1H">{{ .Get "cook" }}</dd>
+  </dl>
+  <dl>
+    <dt>{{ T "total" }}</dt>
+    <dd>{{ .Get "total" }}</dd>
+  </dl>
+  <dl>
+    <dt>{{ T "serving" }}</dt>
+    <dd>{{ .Get "serving" }} <small>{{ T "serving" }}</small></dd>
+  </dl>
+</div>
+
+<div class="ingredients">
+  {{ (replace ( .Inner | markdownify )  "<li>" "<li itemprop=\"recipeIngredient\" >") | safeHTML }}
+</div>

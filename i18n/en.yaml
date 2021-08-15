@@ -1,0 +1,59 @@
+trending:
+  other: "Trending"
+
+favorite:
+  other: "Favorites"
+
+latest:
+  other: "Latest"
+
+categories:
+  other: "Categories"
+
+article:
+  other: "article"
+
+recipe:
+  other: "recipe"
+
+collections:
+  other: "Popular Categories"
+
+about:
+  other: "about"
+
+search:
+  other: "Search"
+
+searchHere:
+  other: "Search Here"
+
+readMore:
+  other: "Read More"
+
+seeAll:
+  other: "View all by date"
+
+page:
+  other: "Page"
+
+related:
+  other: "Related Post"
+
+prepTime:
+  other: "Prep Time"
+
+cookTime:
+  other: "Cook Time"
+
+total:
+  other: "Total time"
+
+serving:
+  other: "Serving"
+
+collectionsIntro:
+  other: "Browse a wide selection of recipes, such as Quick & Easy dishes that take a few minutes to make, from authentic East-Asian recipes, Japanese, and much more!"
+
+articleIntro:
+  other: "Check out our How-To articles, with cooking tips, health and multigenerational kitchen wisdom to turn you into an Indonesian cooking expert!"
