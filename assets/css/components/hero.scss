@@ -5,6 +5,7 @@
   gap: 1em;
 
   article {
+    position: relative;
     animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -19,6 +20,7 @@
     h2 {
       font-weight: bold;
       text-align: center;
+      text-transform: inherit;
     }
   }
 }

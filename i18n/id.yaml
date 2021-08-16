@@ -19,6 +19,9 @@ recipe:
 collections:
   other: "Populer Kategori"
 
+featured:
+  other: "Unggulan"
+
 about:
   other: "tentang"
 

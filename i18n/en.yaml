@@ -19,6 +19,9 @@ recipe:
 collections:
   other: "Popular Categories"
 
+featured:
+  other: "Featured"
+
 about:
   other: "about"
 
