@@ -1,10 +1,25 @@
 {{ define "main" }}
 	{{$home := (and .IsHome (eq .Paginator.PageNumber 1))}}
 
+  <!-- Home - Horizontal -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-9817343977140587"
+      data-ad-slot="6197574934"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+
   <!-- Latest Post -->
   {{- partial "post-latest.html" . -}}
 
   {{ if $home }}
+  <!-- Home - Square -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-9817343977140587"
+      data-ad-slot="3630766124"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
 
   <!-- Top Collections -->
   {{- partialCached "collections.html" . -}}
