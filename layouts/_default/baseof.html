@@ -11,6 +11,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     {{- partial "header.html" . -}}
+    {{- partialCached "banner.html" . -}}
 
     <div class="container">
       {{ if .IsHome }}

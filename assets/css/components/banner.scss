@@ -1,0 +1,14 @@
+#banner {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--color-highlight);
+  text-align: center;
+
+  strong {
+    font-weight: bold;
+  }
+
+  p:after {
+    content: "🍜 🥟 🍚"
+  }
+}

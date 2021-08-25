@@ -4,6 +4,7 @@ No actual rules, styling, variables, mixins, etc. can go in it.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
 
 @import 'config';
 @import 'abstract/functions';
@@ -21,6 +22,7 @@ No actual rules, styling, variables, mixins, etc. can go in it.
 
 /* Components */
 @import 'components/header';
+@import 'components/banner';
 @import 'components/hero';
 @import 'components/post-latest';
 @import 'components/post';

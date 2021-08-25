@@ -9,6 +9,7 @@
     text-decoration: underline;
     font-weight: 500;
     border-top: 4px double var(--color-black);
+    background-color: var(--color-secondary);
 
     &:after {
       content: '→';
