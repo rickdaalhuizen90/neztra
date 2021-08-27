@@ -58,24 +58,28 @@
     {{- partial "post-related.html" . -}}
 
     <!-- Disqus -->
-    {{ template "_internal/disqus.html" . }}
+    {{- partial "disqus.html" . -}}
+   
+    {{- if .NextInSection }}
+        <a class="infinite-more-link" style="display:none" href="{{ .NextInSection.Permalink }}" aria-label="Next">Next</a>
+    {{- end }}
   </article>
 </div>
 
-{{- $pages := ($.Site.GetPage "section" .Section).Pages.ByParam "chapter" }}
-{{- $.Scratch.Set "curPosition" 0 }}
-{{- $.Scratch.Set "index" 0 }}
-{{- range $pages }}
-  {{- if eq $ . }}
-    {{- $.Scratch.Set "curPosition" ($.Scratch.Get "index") }}
-  {{- end }}
-  {{- $.Scratch.Add "index" 1 }}
-{{- end }}
-{{- $prev := (index $pages (sub ($.Scratch.Get "curPosition") 1)) }}
-{{- $next := (index $pages (add ($.Scratch.Get "curPosition") 1)) }}
+{{ end }}
 
-{{- with $next }}
-    <a class="infinite-more-link" href="{{ .Permalink }}" aria-label="Next">Next</a>
-{{- end }}
-
+{{ define "script" }}
+<script type="text/javascript">
+let elem = document.querySelector('.infinite-container');
+let infScroll = new InfiniteScroll( elem, {
+  // options
+  path: () => {
+    let nodes = document.querySelectorAll('.infinite-more-link');
+    return nodes[nodes.length - 1].href;
+  },
+  append: '.infinite-item',
+  history: 'replace',
+  scrollThreshold: 700
+});
+</script>
 {{ end }}

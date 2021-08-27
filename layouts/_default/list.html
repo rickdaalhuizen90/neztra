@@ -9,3 +9,16 @@
       {{ partial "pagination.html" . }}
     </main>
 {{ end }}
+
+{{ define "script" }}
+<script type="text/javascript">
+let elem = document.querySelector('.infinite-container');
+let infScroll = new InfiniteScroll( elem, {
+  // options
+  path: '.infinite-more-link',
+  append: '.infinite-item',
+  history: 'replace',
+  scrollThreshold: 700
+});
+</script>
+{{ end }}

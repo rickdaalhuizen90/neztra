@@ -1,6 +1,6 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 -}}
-<nav class="pagination infinite-container" data-name="pagination-numbers">  
+<nav class="pagination" data-name="pagination-numbers">  
     {{- $ellipsed := false -}}
     {{- $shouldEllipse := false -}}
     {{- range $pag.Pagers -}}
