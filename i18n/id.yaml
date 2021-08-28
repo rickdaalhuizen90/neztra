@@ -37,6 +37,9 @@ readMore:
 seeAll:
   other: "Lihat postingan terbaru"
 
+browseAll:
+  other: "Jelajahi semua"
+
 page:
   other: "Halaman"
 
@@ -68,4 +71,4 @@ collectionsIntro:
   other: "Jelajahi berbagai pilihan resep, seperti hidangan Cepat & Mudah yang membutuhkan waktu beberapa menit untuk dibuat, dari resep otentik Asia Timur, Jepang, dan banyak lagi!"
 
 articleIntro:
-  other: "Lihat artikel How-To kami, dengan tips memasak, kesehatan, dan kebijaksanaan dapur multigenerasi untuk mengubah Anda menjadi ahli memasak Indonesia!"
+  other: "Lihat artikel How-To aku, dengan tips memasak, kesehatan, dan kebijaksanaan dapur multigenerasi untuk mengubah Anda menjadi ahli memasak Indonesia!"

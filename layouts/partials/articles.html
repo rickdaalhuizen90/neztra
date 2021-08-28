@@ -1,6 +1,7 @@
 <section id="articles">
   <h2 class="small-title">{{ T "article" }}</h2>
-  <p>
+  <a class="browse-all" href="{{ printf "%s%s/" $.Site.BaseURL (T "article") }}">{{ T "browseAll" }}</a>
+  <p class="intro">
     {{ T "articleIntro" }}
   </p>
   <div class="articles">

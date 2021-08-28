@@ -57,29 +57,19 @@
 
     {{- partial "post-related.html" . -}}
 
+    <div class="pagination">
+        {{ if .PrevInSection }}
+            <a class="previous" href="{{ .PrevInSection.Permalink }}" aria-label="Previous">{{ substr .PrevInSection.Title 0 25 }}...</a>
+        {{ end }}
+       
+        {{ if .NextInSection }}
+        <a class="next" href="{{ .NextInSection.Permalink }}" aria-label="Next">{{ substr .NextInSection.Title 0 25 }}...</a>
+        {{ end }}
+    </div>
+
     <!-- Disqus -->
     {{- partial "disqus.html" . -}}
-   
-    {{- if .NextInSection }}
-        <a class="infinite-more-link" style="display:none" href="{{ .NextInSection.Permalink }}" aria-label="Next">Next</a>
-    {{- end }}
   </article>
 </div>
-
 {{ end }}
 
-{{ define "script" }}
-<script type="text/javascript">
-let elem = document.querySelector('.infinite-container');
-let infScroll = new InfiniteScroll( elem, {
-  // options
-  path: () => {
-    let nodes = document.querySelectorAll('.infinite-more-link');
-    return nodes[nodes.length - 1].href;
-  },
-  append: '.infinite-item',
-  history: 'replace',
-  scrollThreshold: 700
-});
-</script>
-{{ end }}

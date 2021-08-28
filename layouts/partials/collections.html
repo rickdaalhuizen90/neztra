@@ -1,6 +1,7 @@
 <section id="collections">
   <h2 class="small-title">{{ T "collections" }}</h2>
-  <p>
+  <a class="browse-all" href="{{ printf "%s%s/" $.Site.BaseURL (T "recipe") }}">{{ T "browseAll" }}</a>
+  <p class="intro">
     {{ T "collectionsIntro" }}
   </p>
 

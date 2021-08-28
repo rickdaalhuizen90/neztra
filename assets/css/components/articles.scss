@@ -1,40 +1,93 @@
-.articles {
+#articles {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  column-gap: .6875rem;
-  column-count: 2;
+  grid-template-areas:
+    "smallTitle"
+    "intro"
+    "articles"
+    "browseAll"
+  ;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
 
-  article {
-    display: block;
-    width: auto;
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid;
+  .small-title {
+    grid-area: smallTitle;
+  }
 
-    &:nth-child(1) {
-      grid-column: 1/3;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+  .browse-all {
+    grid-area: browseAll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border: 2px solid #222;
+    padding: 13px;
+    margin-top: 2rem;
+  }
 
-    img {
-      height: auto;
-    }
+  .intro {
+    grid-area: intro;
+  }
+  
+  .articles {
+    grid-area: articles;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: .6875rem;
+    column-count: 2;
 
-    h3 {
-      font-size: 1.25rem;
-      font-weight: bold;
+    article {
+      display: block;
+      width: auto;
+      -webkit-column-break-inside: avoid;
+      break-inside: avoid;
+
+      &:nth-child(1) {
+        grid-column: 1/3;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      img {
+        height: auto;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
     }
   }
 }
 
 @media (min-width: 745px) {
-  .articles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+  #articles {
+    grid-template-areas:
+      "smallTitle browseAll"
+      "intro intro"
+      "articles articles"
+    ;
 
-    article {
-      width: calc(1/3 * 100% - 16px);
+    .browse-all {
+      justify-content: flex-end;
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      &:after {
+        content: '→';
+        font-family: icons;
+        margin-left: 3px;
+      }
+    }
+
+    .articles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+
+      article {
+        width: calc(1/3 * 100% - 16px);
+      }
     }
   }
 }

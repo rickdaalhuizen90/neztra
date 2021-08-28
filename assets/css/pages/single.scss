@@ -52,6 +52,20 @@
   .signature {
     font-weight: bold;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+
+    .previous:before {
+        content: "←";
+    }
+
+    .next:after {
+        content: "→";
+    }
+  }
 }
 
 @media (min-width: 745px) {

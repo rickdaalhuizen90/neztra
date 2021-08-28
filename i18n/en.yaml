@@ -37,6 +37,9 @@ readMore:
 seeAll:
   other: "View all by date"
 
+browseAll:
+  other: "Browse all"
+
 page:
   other: "Page"
 
@@ -55,6 +58,8 @@ total:
 serving:
   other: "Serving"
 
+published:
+  other: "Published"
 collectionsIntro:
   other: "Browse a wide selection of recipes, such as Quick & Easy dishes that take a few minutes to make, from authentic East-Asian recipes, Japanese, and much more!"
 

@@ -103,7 +103,7 @@
         }
       }
     }
-  
+
     nav {
       display: flex;
       flex-direction: column;
@@ -111,6 +111,24 @@
       font-size: 1.5rem;
       line-height: 2;
       width: 100%;
+
+      .dropdown {
+        display: flex;
+        text-transform: uppercase;
+
+        a[disabled] {
+            pointer-events: none;
+            text-decoration: underline;
+        }
+
+        a:nth-of-type(1):after {
+            display: inline-block;
+            content: "/";
+            color: black;
+            margin: 0 3px;
+            text-decoration: none;
+        }
+      }
     }
   }
 }
