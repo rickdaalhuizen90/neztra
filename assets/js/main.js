@@ -1,11 +1,4 @@
 // Infinite scroll
-/*
-new Waypoint.Infinite({
-  element: document.querySelectorAll('.infinite-container')[0],
-  offset: '75%'
-});
-*/
-
 const button = document.querySelector('#menu .button');
 const form = document.querySelector('#menu');
 

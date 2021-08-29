@@ -1,4 +1,6 @@
 {{ define "main" }}
+    {{ partial "category-filter" . }}
+
     <main class="infinite-container">
       <h2 class="small-title">{{ .Title | humanize }}</h2>
       {{ $paginator := .Paginate (where .RegularPages "Draft" false) }}
@@ -12,8 +14,9 @@
 
 {{ define "script" }}
 <script type="text/javascript">
-let infinite = new Waypoint.Infinite({
-  element: document.querySelectorAll('.infinite-container')[0]
+const infinite = new Waypoint.Infinite({
+  element: document.querySelectorAll('.infinite-container')[0],
+  offset: '75%'
 });
 </script>
 {{ end }}

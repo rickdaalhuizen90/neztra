@@ -1,8 +1,38 @@
-<section class="category-filter">
-  <h2 class="small-title">{{ T "categories" }}</h2>
-  <div class="category-tags">
-     {{- range $name, $items := .Site.Taxonomies.categories }} 
-      <a class="category-tag" href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name | humanize }}">{{ $name | humanize }}</a>
-    {{ end }}
+<p class="filters-intro">{{ T "filterIntro" | safeHTML }}</p>
+<section class="filters">
+  <div class="category-filter">
+    <button id="category-toggle">
+      <span>{{ T "byCategory" }}</span>
+      <span class="icon"></span>
+    </button>
+    <div class="dropdown">
+      {{ range $name, $tax := $.Site.Taxonomies.categories }} 
+        <a href="{{ $tax.Page.Permalink }}" title="{{ $name | humanize }}">{{ $name | humanize }}</a>
+      {{ end }}
+    </div>
   </div>
+  <div class="tag-filter">
+    <button id="tag-toggle">
+      <span>{{ T "byTag" }}</span>
+      <span class="icon"></span>
+    </button>
+    <div class="dropdown">
+      {{ range $name, $tax := $.Site.Taxonomies.tags }}
+          <a href="{{ $tax.Page.Permalink }}" title="{{ $name | humanize }}">{{ $name | humanize }}</a>
+      {{ end }}
+    </div>
+  </div>
+  <a class="browse-all" href="{{ printf "%s%s/" $.Site.BaseURL (T "recipe") }}">{{ T "browseAll" }}</a>
 </section>
+
+<script type="text/javascript">
+document.getElementById('category-toggle').addEventListener('click', event => {
+  let dropdown = document.querySelector('.category-filter');
+  dropdown.classList.toggle('open');
+});
+
+document.getElementById('tag-toggle').addEventListener('click', () => {
+  let dropdown = document.querySelector('.tag-filter');
+  dropdown.classList.toggle('open');
+});
+</script>

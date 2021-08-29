@@ -72,3 +72,12 @@ collectionsIntro:
 
 articleIntro:
   other: "Lihat artikel How-To aku, dengan tips memasak, kesehatan, dan kebijaksanaan dapur multigenerasi untuk mengubah Anda menjadi ahli memasak Indonesia!"
+
+filterIntro:
+  other: "Temukan <u>resep favorit</u> Anda"
+
+byCategory:
+  other: "Oleh kategori"
+
+byTag:
+  other: "Oleh tag"

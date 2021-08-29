@@ -65,3 +65,12 @@ collectionsIntro:
 
 articleIntro:
   other: "Check out our How-To articles, with cooking tips, health and multigenerational kitchen wisdom to turn you into an Indonesian cooking expert!"
+
+filterIntro:
+  other: "Find your <u>favorite</u> recipes"
+
+byCategory:
+  other: "By category"
+
+byTag:
+  other: "By tag"
