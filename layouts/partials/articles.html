@@ -12,8 +12,8 @@
           {{ $title := .Title }}
           {{ if .Params.Feature }}
             {{ with .Resources.GetMatch (.Params.Feature) }}
-                {{ $png := .Fill "600x720" }}
-                {{ $webp := .Fill "600x720 webp picture" }}
+                {{ $png := .Fill "361x277" }}
+                {{ $webp := .Fill "361x277 webp picture" }}
                 {{ partialCached "picture.html" (dict "context" . "webp" $webp.Permalink "png" $png.Permalink  "title" $title "width" $png.Width "height" $png.Height "class" "br2" ) . }}
             {{ end }}
           {{ end }}

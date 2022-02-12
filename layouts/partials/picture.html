@@ -1,4 +1,4 @@
 <picture role="img">
   <source srcset="{{- .webp | absURL -}}" type="image/webp">
-  <img src="{{- .png | absURL -}}" alt="{{ .title }}" title="{{ .title }}"  width={{.width}} height={{.height}} itemprop="image" loading="lazy" class={{ .class }} >
+  <img src="{{- .png | absURL -}}" alt="{{ .title }}" title="{{ .title }}"  width={{.width}} height={{.height}} itemprop="image" loading={{ .loading | default "eager" }} class={{ .class }} >
 </picture>

@@ -11,13 +11,16 @@ Name the font family pseudoclasses with primary, secondary, and so on.
 The primary should usually refer to the heading font and the secondary to the standard (body text)
 font.
 */
+
+* {
+  box-sizing: border-box;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
-  font-size: 100%;
-	line-height: 1.15;
+ html {
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -28,16 +31,7 @@ body {
 	font-size: var(--text-base-size);
   font-family: var(--font-primary);
 	color: var(--color-text);
-	line-height: 1.5rem;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-	font-size: 2em;
-	margin: .67em 0;
+	line-height: $baseline;
 }
 
 a {
@@ -54,7 +48,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-secondary);
 	font-weight: $headings-font-weight;
 	line-height: $headings-line-height;
 	color: $headings-color;
@@ -91,27 +84,27 @@ i {
 }
 
 h1 {
-	font-size: $font-size-h1;
+  @include fluid-type(font-size, $minScreen, $maxScreen, 1.383rem, 2.488rem);
 }
 
 h2 {
-	font-size: $font-size-h2;
+	@include fluid-type(font-size, $minScreen, $maxScreen, 1.296rem, 2.074rem);
 }
 
 h3 {
-	font-size: $font-size-h3;
+	@include fluid-type(font-size, $minScreen, $maxScreen, 1.215rem, 1.728rem);
 }
 
 h4 {
-	font-size: $font-size-h4;
+	@include fluid-type(font-size, $minScreen, $maxScreen, 1.138rem, 1.44rem);
 }
 
 h5 {
-	font-size: $font-size-h5;
+	@include fluid-type(font-size, $minScreen, $maxScreen, 1.067rem, 1.2rem);
 }
 
 h6 {
-	font-size: $font-size-h6;
+	@include fluid-type(font-size, $minScreen, $maxScreen, 1rem, 1rem);
 }
 
 // Body text
