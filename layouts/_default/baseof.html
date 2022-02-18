@@ -74,9 +74,7 @@
     <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ $title }} | {{ .Site.Params.subtitle }} Feed" />
     {{ end }}
 
-    {{ $options := dict "config" "post.config.js" "noMap" true }}
-
-    {{ $main := resources.Get "css/main.scss" | resources.ToCSS (dict "outputStyle" "compressed") | resources.PostCSS $options }}
+    {{ $main := resources.Get "css/main.scss" | resources.ToCSS (dict "outputStyle" "compressed") }}
     {{ $style := (slice $main | resources.Concat "style.css") | fingerprint "md5" }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
